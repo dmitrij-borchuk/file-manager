@@ -4,18 +4,34 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
 export interface IncrementAction extends Action {
-    type: 'INCREMENT';
+  type: 'INCREMENT';
 }
 export interface DecrementAction extends Action {
-    type: 'DECREMENT';
+  type: 'DECREMENT';
 }
 
 export const increment: ActionCreator<IncrementAction> = () => ({
-    type: INCREMENT
+  type: INCREMENT,
 });
 
 export const decrement: ActionCreator<DecrementAction> = () => ({
-    type: DECREMENT
+  type: DECREMENT,
 });
 
-export type CounterAction = IncrementAction | DecrementAction;
+export const SET_FOLDER = 'SET_FOLDER';
+export interface SetFolderAction extends Action {
+  type: 'SET_FOLDER';
+  payload: {
+    panelId: string;
+    items: string[];
+  };
+}
+export const setFolder: ActionCreator<SetFolderAction> = (panelId: string, items: string[]) => ({
+  type: SET_FOLDER,
+  payload: {
+    panelId,
+    items,
+  },
+});
+
+export type CounterAction = IncrementAction | DecrementAction | SetFolderAction;
