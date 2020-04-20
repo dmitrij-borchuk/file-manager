@@ -4,6 +4,7 @@ import { DECREMENT, INCREMENT, CounterAction, SET_FOLDER } from '../actions/coun
 import { Dictionary } from '../../types/dictionary';
 
 export interface IFolderStructurePanelState {
+  readonly path: string;
   readonly list: string[];
 }
 
@@ -13,7 +14,8 @@ export interface IFolderStructureState {
 
 const defaultState: IFolderStructureState = {
   panels: {
-    panel1: {
+    default: {
+      path: '/',
       list: [],
     },
   },

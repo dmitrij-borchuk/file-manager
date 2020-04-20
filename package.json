@@ -141,9 +141,14 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@teamsupercell/typings-for-css-modules-loader": "^2.1.1",
+    "@types/classnames": "^2.2.10",
+    "classnames": "^2.2.6",
+    "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "tailwindcss": "^1.2.0"
   }
 }

@@ -26,7 +26,7 @@ export interface SetFolderAction extends Action {
     items: string[];
   };
 }
-export const setFolder: ActionCreator<SetFolderAction> = (panelId: string, items: string[]) => ({
+export const setFolder = (panelId: string, items: string[]): SetFolderAction => ({
   type: SET_FOLDER,
   payload: {
     panelId,
