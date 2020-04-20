@@ -2,10 +2,10 @@ import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFolder } from '../actions/counterActions';
 import { FolderViewer } from './folderViewer/FolderViewer';
 import { RootState } from '../reducers';
 import { readDir } from '../../fileSystem';
+import { setFolder } from '../actions/folderStructureActions';
 
 const fileListSelector = (panelName: string) => (state: RootState) =>
   state.folderStructure.panels[panelName].list;

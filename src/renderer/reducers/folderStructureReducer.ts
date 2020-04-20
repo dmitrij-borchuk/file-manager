@@ -1,6 +1,7 @@
 import { Reducer } from 'redux';
 
-import { DECREMENT, INCREMENT, CounterAction, SET_FOLDER } from '../actions/counterActions';
+import { CounterAction } from '../actions/counterActions';
+import { FileStructureAction, SET_FOLDER } from '../actions/folderStructureActions';
 import { Dictionary } from '../../types/dictionary';
 
 export interface IFolderStructurePanelState {
@@ -21,21 +22,11 @@ const defaultState: IFolderStructureState = {
   },
 };
 
-export const folderStructureReducer: Reducer<IFolderStructureState> = (
+export const folderStructureReducer: Reducer<IFolderStructureState, FileStructureAction> = (
   state = defaultState,
-  action: CounterAction,
+  action,
 ) => {
   switch (action.type) {
-    // case INCREMENT:
-    //   return {
-    //     ...state,
-    //     value: state.value + 1,
-    //   };
-    // case DECREMENT:
-    //   return {
-    //     ...state,
-    //     value: state.value - 1,
-    //   };
     case SET_FOLDER:
       const currentPanel = state.panels[action.payload.panelId];
       return {

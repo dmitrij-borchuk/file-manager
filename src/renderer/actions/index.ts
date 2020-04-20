@@ -1,3 +1,4 @@
 import { CounterAction } from './counterActions';
+import { FileStructureAction } from './folderStructureActions';
 
-export type RootActions = CounterAction[keyof CounterAction];
+export type RootActions = CounterAction | FileStructureAction;
